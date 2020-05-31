@@ -37,20 +37,23 @@ setInterval(function () {
 
 var speedChartctx = document.getElementById("speedtestChart");
 var speedChart = new Chart(speedChartctx, {
-    type: 'bar',
+    type: 'line',
     data: {
         labels: speedlabels,
-        datasets: [{
-            label: 'Download Mbps',
-            data: downloadspeed,
-            backgroundColor: 'rgba(75, 192, 192, 0.1)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 1,
-            cubicInterpolationMode: 'monotone',
-            yAxisID: "y-axis-1"
-        },
+        datasets: [
+            {
+                label: 'Download Mbps',
+                fill: true,
+                data: downloadspeed,
+                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                cubicInterpolationMode: 'monotone',
+                yAxisID: "y-axis-1"
+            },
             {
                 label: 'Upload Mbps',
+                fill: true,
                 data: uploadspeed,
                 backgroundColor: 'rgba(255, 99, 132, 0.1)',
                 borderColor: 'rgba(255,99,132,1)',
@@ -59,6 +62,7 @@ var speedChart = new Chart(speedChartctx, {
             },
             {
                 label: 'Ping ms',
+                fill: true,
                 data: serverPing,
                 backgroundColor: 'rgba(69,237,33,0.0)',
                 borderColor: 'rgba(69,237,33,1)',
@@ -81,7 +85,7 @@ var speedChart = new Chart(speedChartctx, {
                 display: true,
                 position: "left",
                 id: "y-axis-1",
-                ticks : {
+                ticks: {
                     min: 0
                 }
             },
@@ -90,7 +94,7 @@ var speedChart = new Chart(speedChartctx, {
                     display: true,
                     position: "right",
                     id: "y-axis-2",
-                    ticks : {
+                    ticks: {
                         min: 0
                     }
                 }
