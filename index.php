@@ -112,7 +112,7 @@
         </div>
         <div class="box-body">
           <div class="chart">
-          <canvas id="speedtestChart" width="800" height="140"></canvas>
+          <canvas id="speedtestChart" width="800" height="200"></canvas>
           </div>
         </div>
         <div class="overlay">
